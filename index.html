@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balcony Bakery & Grill</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Modal Popup for Discount -->
+  <div id="discount-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h2>Willkommen bei RUDI'S BACKSTUBE!</h2>
+      <p>Genießen Sie <strong>10% Rabatt</strong> auf Ihre erste Bestellung. Gutscheincode: <b>WILLKOMMEN10</b></p>
+      <button class="btn" id="modal-cta">Speisekarte ansehen</button>
+    </div>
+  </div>
+
+  <!-- Header/Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="RUDI'S BACKSTUBE Logo" class="logo-img">
+        <span class="sr-only">RUDI'S BACKSTUBE</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Startseite</a></li>
+        <li><a href="#about">Über Uns</a></li>
+        <li><a href="#menu">Speisekarte</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <select class="lang-select">
+          <option>DE</option>
+          <option>EN</option>
+        </select>
+        <a href="#contact" class="btn nav-cta">Tisch reservieren</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+  <div class='side-nav-overlay'></div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg-slideshow">
+      <img src="images/c1.jpg" alt="Hero 1" class="hero-bg-img active">
+      <img src="images/c2.jpg" alt="Hero 2" class="hero-bg-img">
+      <img src="images/c3.jpg" alt="Hero 3" class="hero-bg-img">
+      <img src="images/c4.jpg" alt="Hero 4" class="hero-bg-img">
+    </div>
+    <div class="hero-content">
+      <h1>Willkommen bei <span>RUDI'S BACKSTUBE</span></h1>
+      <p>Bäckerei & Konditorei | Balkanspezialitäten & Grill</p>
+      <a href="#menu" class="btn hero-cta">Speisekarte ansehen</a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="images/c5.jpg" alt="Bäckerei, Konditorei und Grill">
+    </div>
+    <div class="about-text">
+      <h2>Über Uns</h2>
+      <p>RUDI'S BACKSTUBE ist Ihre Bäckerei & Konditorei mit Herz – und ein Ort, an dem Balkanspezialitäten und Grillgenuss auf traditionelle Backkunst treffen. Genießen Sie unsere frischen Backwaren, feine Torten, herzhafte Balkangerichte und Spezialitäten vom Grill in gemütlicher Atmosphäre.</p>
+      <p>Ob Frühstück, Mittag oder Kaffeezeit – bei uns finden Sie immer etwas Besonderes!</p>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <h2>Unsere Speisekarte</h2>
+    <div class="menu-categories">
+      <button class="menu-tab active" data-category="bakery">Bäckerei</button>
+      <button class="menu-tab" data-category="grill">Grill</button>
+      <button class="menu-tab" data-category="drinks">Getränke</button>
+      <button class="menu-tab" data-category="specialties">Spezialitäten</button>
+    </div>
+    <div class="menu-items">
+      <!-- Bakery Items -->
+      <div class="menu-list" data-category="bakery">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Croissant">
+          <div>
+            <h3>Croissant</h3>
+            <p>Buttriges, knuspriges Gebäck – jeden Morgen frisch gebacken.</p>
+            <span class="price">3,50 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Erdbeer-Tarte">
+          <div>
+            <h3>Erdbeer-Tarte</h3>
+            <p>Süßer Mürbeteig mit Vanillecreme und frischen Erdbeeren.</p>
+            <span class="price">4,00 €</span>
+          </div>
+        </div>
+      </div>
+      <!-- Grill Items -->
+      <div class="menu-list" data-category="grill" style="display:none;">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80" alt="Gegrilltes Steak">
+          <div>
+            <h3>Gegrilltes Steak</h3>
+            <p>Saftiges Steak, perfekt gegrillt und mit Kräuterbutter serviert.</p>
+            <span class="price">18,00 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Hähnchenspieße">
+          <div>
+            <h3>Hähnchenspieße</h3>
+            <p>Mariniertes Hähnchen, gegrillt und mit würzigem Dip serviert.</p>
+            <span class="price">12,00 €</span>
+          </div>
+        </div>
+      </div>
+      <!-- Drinks Items -->
+      <div class="menu-list" data-category="drinks" style="display:none;">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Cappuccino">
+          <div>
+            <h3>Cappuccino</h3>
+            <p>Kräftiger Espresso mit aufgeschäumter Milch und cremigem Schaum.</p>
+            <span class="price">3,00 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Frische Limonade">
+          <div>
+            <h3>Frische Limonade</h3>
+            <p>Erfrischende hausgemachte Limonade mit einem Hauch Minze.</p>
+            <span class="price">2,50 €</span>
+          </div>
+        </div>
+      </div>
+      <!-- Specialties Items -->
+      <div class="menu-list" data-category="specialties" style="display:none;">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Bäckerei-Grill Fusion">
+          <div>
+            <h3>Bäckerei-Grill Fusion</h3>
+            <p>Unsere Spezialität: Gegrilltes Sauerteigbrot mit herzhaften Belägen.</p>
+            <span class="price">10,00 €</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery" id="gallery">
+    <h2>Galerie</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Essen 1" class="gallery-img">
+      <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Essen 2" class="gallery-img">
+      <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Essen 3" class="gallery-img">
+      <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Essen 4" class="gallery-img">
+      <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80" alt="Essen 5" class="gallery-img">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Essen 6" class="gallery-img">
+    </div>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="close" id="close-lightbox">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" src="" alt="Galerie Vorschau">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Kontakt</h2>
+    <div class="contact-container">
+      <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="E-Mail" required>
+        <textarea placeholder="Nachricht" required></textarea>
+        <button type="submit" class="btn">Nachricht senden</button>
+      </form>
+      <div class="contact-info">
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2381.995644129393!2d7.7856297!3d47.5602277!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791b51e2ba227b1%3A0x8e1d40cd33947dc4!2sRudis%20Backstube!5e1!3m2!1sen!2sde!4v1752525607279!5m2!1sen!2sde" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="business-details">
+          <p><strong>Öffnungszeiten:</strong> Montag bis Sonntag 6:00–21:00</p>
+          <p><strong>Telefon:</strong> +49 173 6518396</p>
+          <p><strong>Adresse:</strong> Hebelstraße 2, 79618 Rheinfelden (Baden)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/rudis.backstube/" aria-label="Instagram"><i class="fab fa-instagram"></i>Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=100067211083302" aria-label="Facebook"><i class="fab fa-facebook"></i>Facebook</a>
+      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i>TikTok</a>
+    </div>
+    <div class="footer-links">
+      <a href="#menu">Speisekarte</a>
+      <a href="#about">Über Uns</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2024 RUDI'S BACKSTUBE. Alle Rechte vorbehalten.
+    </div>
+  </footer>
+
+  <!-- Font Awesome for Social Icons -->
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html> 
