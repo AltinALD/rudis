@@ -10,16 +10,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Modal Popup for Discount -->
-  <div id="discount-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="close-modal">&times;</span>
-      <h2>Willkommen bei RUDI'S BACKSTUBE!</h2>
-      <p>Genießen Sie <strong>10% Rabatt</strong> auf Ihre erste Bestellung. Gutscheincode: <b>WILLKOMMEN10</b></p>
-      <button class="btn" id="modal-cta">Speisekarte ansehen</button>
-    </div>
-  </div>
-
   <!-- Header/Navbar -->
   <header>
     <nav class="navbar">
@@ -78,55 +68,394 @@
   <!-- Menu Section -->
   <section class="menu" id="menu">
     <h2>Unsere Speisekarte</h2>
+    <div class="menu-category-message">Bitte wählen Sie eine Kategorie:</div>
     <div class="menu-categories">
-      <button class="menu-tab active" data-category="bakery">Bäckerei</button>
-      <button class="menu-tab" data-category="grill">Grill</button>
-      <button class="menu-tab" data-category="drinks">Getränke</button>
-      <button class="menu-tab" data-category="specialties">Spezialitäten</button>
+      <button class="menu-tab active" data-category="grill-spezials">Grill-Spezials</button>
+      <button class="menu-tab" data-category="burek">Burek</button>
+      <button class="menu-tab" data-category="pizzen">Pizzen</button>
+      <button class="menu-tab" data-category="backwaren">Backwaren</button>
+      <button class="menu-tab" data-category="brot">Brot</button>
+      <button class="menu-tab" data-category="desserts">Desserts</button>
+      <button class="menu-tab" data-category="kalte-getraenke">Kalte Getränke</button>
+      <button class="menu-tab" data-category="warme-getraenke">Warme Getränke</button>
     </div>
     <div class="menu-items">
-      <!-- Bakery Items -->
-      <div class="menu-list" data-category="bakery">
+      <!-- Grill-Spezials Items -->
+      <div class="menu-list" data-category="grill-spezials">
         <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Croissant">
+          <img src="images/k1.jpg" alt="Cevapcici">
           <div>
-            <h3>Croissant</h3>
-            <p>Buttriges, knuspriges Gebäck – jeden Morgen frisch gebacken.</p>
-            <span class="price">3,50 €</span>
+            <h3>Cevapcici</h3>
+            <p>Wählen Sie Ihre Portion:</p>
+            <ul style="padding-left:1em; margin:0 0 0.7em 0; color:var(--gold); font-size:0.98em;">
+              <li>5 Stück – 7,00 €</li>
+              <li>7 Stück – 9,00 €</li>
+              <li>10 Stück – 11,00 €</li>
+              <li>1 kg – 17,00 €</li>
+            </ul>
           </div>
         </div>
         <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Erdbeer-Tarte">
+          <img src="images/k2.jpg" alt="Hamburger">
           <div>
-            <h3>Erdbeer-Tarte</h3>
-            <p>Süßer Mürbeteig mit Vanillecreme und frischen Erdbeeren.</p>
-            <span class="price">4,00 €</span>
+            <h3>Hamburger</h3>
+            <p>Saftiger Balkanhamburger, frisch vom Grill.</p>
+            <span class="price">7,00 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="images/k3.jpg" alt="Pleskavica">
+          <div>
+            <h3>Pleskavica</h3>
+            <p>Balkan-Rindfleischfrikadelle, gegrillt.</p>
+            <span class="price">9,00 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="images/k4.jpg" alt="Pleskavica Gefüllt">
+          <div>
+            <h3>Pleskavica Gefüllt (mit Käse)</h3>
+            <p>Gefüllt mit würzigem Käse, frisch gegrillt.</p>
+            <span class="price">11,00 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="images/k5.jpg" alt="Hähnchenfilet">
+          <div>
+            <h3>Hähnchenfilet</h3>
+            <p>Gegrilltes Hähnchenfilet, zart und saftig.</p>
+            <span class="price">10,00 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="images/k6.jpg" alt="Mixteller">
+          <div>
+            <h3>Mixteller (für 2 Personen)</h3>
+            <p>Kombination aus Hähnchenfleisch, Hamburgerfleisch und Cevapcici.</p>
+            <span class="price">28,00 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="images/k7.jpg" alt="Pommes">
+          <div>
+            <h3>Pommes</h3>
+            <p>Knusprige, goldene Pommes frites.</p>
+            <span class="price">2,30 €</span>
+          </div>
+        </div>
+      </div> <!-- END Grill-Spezials Items -->
+      <!-- Burek Items -->
+      <div class="menu-list" data-category="burek" style="display:none;">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Burek Rind">
+          <div>
+            <h3>Burek Rind</h3>
+            <p>Hausgemachter Burek mit würziger Rindfleischfüllung.</p>
+            <span class="price">4,50 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Burek Käse">
+          <div>
+            <h3>Burek Käse</h3>
+            <p>Hausgemachter Burek mit cremiger Käsefüllung.</p>
+            <span class="price">4,50 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Burek Spinat">
+          <div>
+            <h3>Burek Spinat</h3>
+            <p>Hausgemachter Burek mit Spinat und Käse.</p>
+            <span class="price">4,50 €</span>
           </div>
         </div>
       </div>
-      <!-- Grill Items -->
-      <div class="menu-list" data-category="grill" style="display:none;">
+      <!-- Pizzen Items -->
+      <div class="menu-list" data-category="pizzen" style="display:none;">
         <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80" alt="Gegrilltes Steak">
+          <img src="https://images.unsplash.com/photo-1548365328-8b849e6c7b8b?auto=format&fit=crop&w=400&q=80" alt="Pizza Stück">
           <div>
-            <h3>Gegrilltes Steak</h3>
-            <p>Saftiges Steak, perfekt gegrillt und mit Kräuterbutter serviert.</p>
-            <span class="price">18,00 €</span>
+            <h3>Pizza Stück</h3>
+            <p>Frisches Pizzastück mit Belag nach Wahl.</p>
+            <span class="price">2,70 €</span>
           </div>
         </div>
         <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Hähnchenspieße">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Pizza Ganz">
           <div>
-            <h3>Hähnchenspieße</h3>
-            <p>Mariniertes Hähnchen, gegrillt und mit würzigem Dip serviert.</p>
-            <span class="price">12,00 €</span>
+            <h3>Pizza Ganz</h3>
+            <p>Große, ganze Pizza – ideal zum Teilen.</p>
+            <span class="price">11,00 €</span>
           </div>
         </div>
       </div>
-      <!-- Drinks Items -->
-      <div class="menu-list" data-category="drinks" style="display:none;">
+      <!-- Backwaren Items -->
+      <div class="menu-list" data-category="backwaren" style="display:none;">
         <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Cappuccino">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Quarktasche">
+          <div>
+            <h3>Quarktasche</h3>
+            <p>Lockerer Blätterteig mit Quarkfüllung.</p>
+            <span class="price">2,20 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Apfeltasche">
+          <div>
+            <h3>Apfeltasche</h3>
+            <p>Gefüllt mit saftigen Äpfeln.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Süßes Stückchen">
+          <div>
+            <h3>Süßes Stückchen</h3>
+            <p>Feines süßes Gebäck.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Nussschnecke">
+          <div>
+            <h3>Nussschnecke</h3>
+            <p>Mit Nussfüllung und Zuckerguss.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Rosinenschnecke">
+          <div>
+            <h3>Rosinenschnecke</h3>
+            <p>Mit Rosinen und Zuckerguss.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80" alt="Früchteherz">
+          <div>
+            <h3>Früchteherz</h3>
+            <p>Herzförmiges Gebäck mit Fruchtfüllung.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1548365328-8b849e6c7b8b?auto=format&fit=crop&w=400&q=80" alt="Vanilleherz">
+          <div>
+            <h3>Vanilleherz</h3>
+            <p>Herzförmiges Gebäck mit Vanillefüllung.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Aprikose Füllung">
+          <div>
+            <h3>Aprikose Füllung</h3>
+            <p>Feines Gebäck mit Aprikosenfüllung.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Zuckergebäck">
+          <div>
+            <h3>Zuckergebäck</h3>
+            <p>Knuspriges Gebäck mit Zucker bestreut.</p>
+            <span class="price">1,60 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Nussgebäck">
+          <div>
+            <h3>Nussgebäck</h3>
+            <p>Mit feiner Nussfüllung.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Mohngebäck">
+          <div>
+            <h3>Mohngebäck</h3>
+            <p>Mit Mohnfüllung.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Kirschgebäck">
+          <div>
+            <h3>Kirschgebäck</h3>
+            <p>Mit Kirschfüllung.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Vanille Croissant">
+          <div>
+            <h3>Vanille Croissant</h3>
+            <p>Gefüllt mit Vanillecreme.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Schoko Croissant">
+          <div>
+            <h3>Schoko Croissant</h3>
+            <p>Gefüllt mit Schokolade.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Schokobrötchen">
+          <div>
+            <h3>Schokobrötchen</h3>
+            <p>Weiches Brötchen mit Schokostückchen.</p>
+            <span class="price">2,10 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Buttercroissant">
+          <div>
+            <h3>Buttercroissant</h3>
+            <p>Frisch gebacken, buttrig und zart.</p>
+            <span class="price">1,90 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Kifle">
+          <div>
+            <h3>Kifle</h3>
+            <p>Balkan-Spezialität, weich und luftig.</p>
+            <span class="price">1,50 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Salztasche">
+          <div>
+            <h3>Salztasche</h3>
+            <p>Herzhaftes Gebäck mit Salz bestreut.</p>
+            <span class="price">0,60 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Käsebällchen">
+          <div>
+            <h3>Käsebällchen</h3>
+            <p>Kleine Bällchen mit Käsefüllung.</p>
+            <span class="price">1,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Käsegipfel">
+          <div>
+            <h3>Käsegipfel</h3>
+            <p>Herzhaftes Gebäck mit Käse.</p>
+            <span class="price">1,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Sesamring">
+          <div>
+            <h3>Sesamring</h3>
+            <p>Mit Sesam bestreut, knusprig gebacken.</p>
+            <span class="price">1,50 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Hotdog">
+          <div>
+            <h3>Hotdog</h3>
+            <p>Würstchen im weichen Brötchen.</p>
+            <span class="price">2,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Käsestange Brezel">
+          <div>
+            <h3>Käsestange Brezel</h3>
+            <p>Brezelstange mit Käse überbacken.</p>
+            <span class="price">1,70 €</span>
+          </div>
+        </div>
+      </div>
+      <!-- Desserts Items -->
+      <div class="menu-list" data-category="desserts" style="display:none;">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Belgete Brötchen">
+          <div>
+            <h3>Belgete Brötchen</h3>
+            <p>Frisch belegtes Brötchen mit feinen Zutaten.</p>
+            <span class="price">3,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Butterbrezel">
+          <div>
+            <h3>Butterbrezel</h3>
+            <p>Frische Brezel mit Butter.</p>
+            <span class="price">1,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Baklava Pistazien groß">
+          <div>
+            <h3>Baklava Pistazien groß</h3>
+            <p>Großes Stück Baklava mit Pistazien.</p>
+            <span class="price">3,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Baklava Pistazien klein">
+          <div>
+            <h3>Baklava Pistazien klein</h3>
+            <p>Kleines Stück Baklava mit Pistazien.</p>
+            <span class="price">1,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80" alt="Baklava Nuss">
+          <div>
+            <h3>Baklava Nuss</h3>
+            <p>Baklava mit Nussfüllung.</p>
+            <span class="price">2,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Trilece">
+          <div>
+            <h3>Trilece</h3>
+            <p>Milchdessert aus dem Balkan.</p>
+            <span class="price">2,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1548365328-8b849e6c7b8b?auto=format&fit=crop&w=400&q=80" alt="Tullumba">
+          <div>
+            <h3>Tullumba</h3>
+            <p>Süßes, frittiertes Gebäck.</p>
+            <span class="price">2,70 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Cremeschnitte Stück">
+          <div>
+            <h3>Cremeschnitte Stück</h3>
+            <p>Stück Cremeschnitte, sahnig und lecker.</p>
+            <span class="price">4,20 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Torte diverse">
+          <div>
+            <h3>Torte diverse</h3>
+            <p>Verschiedene Tortenstücke zur Auswahl.</p>
+            <span class="price">4,50 €</span>
+          </div>
+        </div>
+      </div>
+      <!-- Kalte Getränke Items -->
+      <div class="menu-list" data-category="kalte-getraenke" style="display:none;">
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Cappuccino">
           <div>
             <h3>Cappuccino</h3>
             <p>Kräftiger Espresso mit aufgeschäumter Milch und cremigem Schaum.</p>
@@ -142,14 +471,22 @@
           </div>
         </div>
       </div>
-      <!-- Specialties Items -->
-      <div class="menu-list" data-category="specialties" style="display:none;">
+      <!-- Warme Getränke Items -->
+      <div class="menu-list" data-category="warme-getraenke" style="display:none;">
         <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Bäckerei-Grill Fusion">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Cappuccino">
           <div>
-            <h3>Bäckerei-Grill Fusion</h3>
-            <p>Unsere Spezialität: Gegrilltes Sauerteigbrot mit herzhaften Belägen.</p>
-            <span class="price">10,00 €</span>
+            <h3>Cappuccino</h3>
+            <p>Kräftiger Espresso mit aufgeschäumter Milch und cremigem Schaum.</p>
+            <span class="price">3,00 €</span>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Frische Limonade">
+          <div>
+            <h3>Frische Limonade</h3>
+            <p>Erfrischende hausgemachte Limonade mit einem Hauch Minze.</p>
+            <span class="price">2,50 €</span>
           </div>
         </div>
       </div>
