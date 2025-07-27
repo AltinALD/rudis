@@ -10,8 +10,8 @@
   --transition: 0.3s cubic-bezier(.4,0,.2,1);
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  overflow-x: hidden;
 }
 body {
   font-family: 'Poppins', Arial, sans-serif;
@@ -34,6 +34,10 @@ img, .gallery-img, .about-img img {
 }
 .gallery-grid, .menu-list {
   width: 100%;
+  box-sizing: border-box;
+}
+.gallery-grid, .menu-categories, .menu-items, .about, .contact, .footer-social, .footer-links {
+  max-width: 100vw;
   box-sizing: border-box;
 }
 
@@ -250,6 +254,7 @@ header {
   background: #fff;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  position: relative;
 }
 .menu h2 {
   font-family: 'Playfair Display', serif;
@@ -266,6 +271,11 @@ header {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
+/* Sticky menu category selector within menu section */
+.menu {
+  position: relative;
+  overflow: visible;
+}
 .menu-categories {
   display: flex;
   flex-direction: row;
@@ -277,6 +287,13 @@ header {
   width: auto;
   max-width: 1200px;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 101;
+  background: #fff;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .menu-tab {
   background: var(--coffee);
@@ -300,6 +317,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 0;
 }
 .menu-list {
   display: flex;
@@ -527,8 +545,16 @@ footer {
 }
 .footer-copy {
   font-size: 0.95em;
-  color: var(--pink);
+  color: var(--coffee);
   margin-top: 0.5em;
+}
+.aldesigns-link {
+  color: #e53935;
+  font-weight: bold;
+  text-decoration: none;
+}
+.aldesigns-link:hover {
+  text-decoration: underline;
 }
 
 /* Modal Popup */
@@ -594,7 +620,7 @@ footer {
     position: relative;
   }
   .nav-links {
-    display: none;
+    display: flex;
     flex-direction: column;
     background: var(--coffee);
     position: fixed;
@@ -604,13 +630,16 @@ footer {
     box-shadow: var(--shadow);
     border-radius: var(--radius) 0 0 var(--radius);
     padding: 2em 1em 1em 1em;
-    z-index: 2001;
+    z-index: 9999;
     transition: right 0.35s var(--transition);
     overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
   }
   .nav-links.open {
-    display: flex;
     right: 0;
+    visibility: visible;
+    opacity: 1;
   }
   .nav-links a {
     padding: 1em 0.8em;
@@ -624,7 +653,7 @@ footer {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
     background: rgba(24,25,26,0.6);
-    z-index: 2000;
+    z-index: 9998;
     transition: opacity 0.3s;
   }
   .side-nav-overlay.active {
@@ -643,22 +672,18 @@ footer {
     position: relative !important;
   }
   .menu-categories {
-    display: flex !important;
     gap: 0.5rem;
-    overflow-x: auto !important;
-    flex-wrap: nowrap !important;
-    padding: 1.2rem 1rem 1.2rem 1rem !important;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 1.2rem 1rem;
     border-bottom: 1.5px solid #eee;
-    margin: 0 0 1.2rem 0 !important;
+    margin: 0 0 1.2rem 0;
     scrollbar-width: none;
     background: #e8dcc6;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    box-sizing: border-box !important;
-    justify-content: flex-start !important;
-    position: sticky !important;
-    top: 60px !important;
-    z-index: 100 !important;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    justify-content: flex-start;
   }
   .menu-items {
     position: relative !important;
@@ -766,4 +791,37 @@ footer {
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+.scroll-up-btn {
+  display: none;
+  position: fixed;
+  bottom: 2.5em;
+  right: 1.5em;
+  z-index: 1000;
+  background: var(--gold, #e0b04b);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+.scroll-up-btn.show {
+  display: flex;
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .scroll-up-btn {
+    bottom: 1.5em;
+    right: 1em;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+  }
 } 
